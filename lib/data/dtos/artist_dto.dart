@@ -1,0 +1,27 @@
+import '../../model/artists/artist.dart';
+
+class ArtistDto {
+  static const String genreKey = 'genre';
+  static const String imageUrlKey = 'imageUrl';
+  static const String nameKey = 'name';
+
+  static Artist fromJson(String id, Map<String, dynamic> json){
+    assert(json[genreKey] is String);
+    assert(json[imageUrlKey] is String);
+    assert(json[nameKey] is String);
+
+    return Artist(
+      genre: json[genreKey],
+      imageUrl: Uri.parse(json[imageUrlKey]),
+      name: json[nameKey],
+    );
+  }
+
+  Map<String, dynamic> toJson(Artist artist){
+    return {
+      genreKey: artist.genre,
+      imageUrlKey: artist.imageUrl,
+      nameKey: artist.name
+    };
+  }
+}
