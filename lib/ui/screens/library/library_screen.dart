@@ -1,3 +1,4 @@
+import 'package:firebase_practice/data/repositories/artists/artist_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'view_model/library_view_model.dart';
@@ -14,6 +15,7 @@ class LibraryScreen extends StatelessWidget {
       create: (context) => LibraryViewModel(
         playerState: context.read<PlayerState>(),
         songRepository: context.read<SongRepository>(),
+        artistRepository: context.read<ArtistRepository>()
       ),
       child: LibraryContent(),
     );

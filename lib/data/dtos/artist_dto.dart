@@ -11,6 +11,7 @@ class ArtistDto {
     assert(json[nameKey] is String);
 
     return Artist(
+      id:id,
       genre: json[genreKey],
       imageUrl: Uri.parse(json[imageUrlKey]),
       name: json[nameKey],
